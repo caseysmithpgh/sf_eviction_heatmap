@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SF Eviction Notice Density</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+<link
+href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css"
+rel="stylesheet"
+/>
+<style>
+body {
+margin: 0;
+padding: 0;
+}
+h2,
+h3 {
+margin: 10px;
+font-size: 1.2em;
+}
+h3 {
+font-size: 1em;
+}
+p {
+font-size: 0.85em;
+margin: 10px;
+text-align: left;
+}
+.map-overlay {
+position: absolute;
+bottom: 0;
+right: 0;
+background: rgba(255, 255, 255, 0.8);
+margin-right: 20px;
+font-family: Arial, sans-serif;
+overflow: auto;
+border-radius: 3px;
+}
+#map {
+position: absolute;
+top: 0;
+bottom: 0;
+width: 100%;
+}
+#features {
+top: 0;
+height: 100px;
+margin-top: 20px;
+width: 250px;
+}
+#legend {
+padding: 10px;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+line-height: 18px;
+height: 150px;
+margin-bottom: 40px;
+width: 100px;
+}
+.legend-key {
+display: inline-block;
+border-radius: 20%;
+width: 10px;
+height: 10px;
+margin-right: 5px;
+}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="map-overlay" id="features">
+<h2>San Francisco Eviction Notice Density </h2>
+<h2>(1997-Present)</h2>
+<div id="pd"><p></p></div>
+</div>
+<div class="map-overlay" ></div>
+ 
+<script>
+// define access token
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2FzZXlzbWl0aC1wZ2giLCJhIjoiY2trZDlrcGR2MDE3YjJucXRybTQwZzVldCJ9.LGxGnGLJkn8aT8ifnUpFHQ';
+ 
+//create map
+var map = new mapboxgl.Map({
+container: 'map', // container id
+style: 'mapbox://styles/caseysmith-pgh/cknf5lh8f0rto17qgy14241vx' // map style URL from Mapbox Studio
+});
+ 
+// wait for map to load before adjusting it
+map.on('load', function () {
+// make a pointer cursor
+map.getCanvas().style.cursor = 'default';
+ 
+// set map bounds to the continental US
+map.fitBounds([
+[-122.364633, 37.762597],
+[-122.536681, 37.751382]
+]);
+ 
+// make a pointer cursor
+map.getCanvas().style.cursor = 'default';
+
+ 
+
+// change info window on hover
+
+});
+</script>
+</body>
+</html>
